@@ -9,7 +9,7 @@ shell_width = 1;
 
 difference() {
     cylinder(base_depth,base_width/2,base_width/2);
-    translate([0,0,0]) cylinder(25,(base_width/2)-shell_width,(base_width/2)-shell_width);
+    cylinder(base_depth,(base_width/2)-shell_width,(base_width/2)-shell_width);
 }
 difference() {
     translate([0,0,base_depth]) cylinder(mid_depth,(base_width/2),(end_width/2));
