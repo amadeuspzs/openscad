@@ -13,10 +13,13 @@ Original items:
 
 pcb_length = 34.5;
 pcb_width = 25.8;
-pcb_height = 17.1; // height from bottom of USB socket to top board, excluding sensor poking out top
+pcb_height = 7; //17.1; // height from bottom of USB socket to top board, excluding sensor poking out top
 
 usb_socket_width = 9;
 usb_socket_height = 2;
+
+pcn_lip_height = usb_socket_height;
+pcb_lip_depth = 4;
 
 sensor_diameter = 5;
 case_wall_thickness = 2;
@@ -47,7 +50,7 @@ module reset_hole() {
 // pcb lip
 
 module pcb_lip() {
-    
+    translate([0,-pcb_length/2 + case_wall_thickness,-pcb_height/2 + case_wall_thickness]) cube([pcb_width/2, pcb_lip_depth, pcb_lip_height], center = true);
 }
 
 // combine
