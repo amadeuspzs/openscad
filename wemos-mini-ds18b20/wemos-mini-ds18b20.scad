@@ -11,21 +11,22 @@ Original items:
 
 */
 
-pcb_length = 34.5;
-pcb_width = 25.8;
+pcb_length = 34.6;
+pcb_width = 25.9;
 pcb_height = 7; //17.1; // height from bottom of USB socket to top board, excluding sensor poking out top
 
 usb_socket_width = 9;
-usb_socket_height = 2;
+usb_socket_height = 3.5;
+usb_socket_offset = 1;
 
-pcn_lip_height = usb_socket_height;
+pcb_lip_height = usb_socket_height;
 pcb_lip_depth = 4;
 
 sensor_diameter = 5;
 case_wall_thickness = 2;
 
 reset_hole_diameter = 3;
-reset_hole_offset = 1.5; // distance from edge
+reset_hole_offset = 4.5; // distance from edge
 // Build crude case
 
 module crude_case() {
@@ -38,7 +39,7 @@ module crude_case() {
 
 // usb hole
 module usb_hole() {
-    translate([2, (pcb_length + case_wall_thickness)/2, -(pcb_height/2) + case_wall_thickness]) cube([usb_socket_width, case_wall_thickness, usb_socket_height], center = true);
+    translate([usb_socket_offset, (pcb_length + case_wall_thickness)/2, -(pcb_height/2) + (usb_socket_height/2) + (case_wall_thickness/2)]) cube([usb_socket_width, case_wall_thickness, usb_socket_height], center = true);
 }
 
 // reset hole
